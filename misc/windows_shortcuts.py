@@ -26,7 +26,7 @@ keymap = {
     "(win|windows) menu": [Key("win"), time_delay(0.2), Key("tab")],
     "(win|windows) search [bar]": Key("win-s"),
     "(win | windows) run": Key("win-r"),
-    "(win|windows) (activities | actions)": Key("win-b"),
+    "(win | windows) (activities | actions)": Key("win-b"),
     # window manipulation
     "windy up": Key("win-up"),
     "windy down": Key("win-down"),
@@ -38,8 +38,8 @@ keymap = {
     "(view | show) swank": Key("ctrl-alt-tab"),
     # other shortcuts
     "toggle (dektop|desk)": Key("win-d"),
-    "windows (explore|explorer)": Key("win-e"),
-    "windows settings": Key("win-i"),
+    "(win | windows) (explore|explorer)": Key("win-e"),
+    "(win | windows) settings": Key("win-i"),
     "take screenshot": Key("win-shift-s"),
     "clip history": Key("win-v"),
     "(view | show) (task|tasks)": Key("win-tab"),

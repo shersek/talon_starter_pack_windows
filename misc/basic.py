@@ -35,6 +35,7 @@ modifiers = {
     "alt": "alt",
     "option": "alt",
     "win": "win",
+    "effen": "fn",
 }
 
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
