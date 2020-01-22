@@ -1,0 +1,42 @@
+{
+  "settingsVersion": "1.64.6",
+  "exclusionRules": [
+    {
+      "pattern": "https://www.openvim.com/",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.ps1fun.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": "?"
+    },
+    {
+      "pattern": "https?://hangouts.google.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\n\n#navigating page\nmap i scrollPageUp\nmap u scrollPageDown\nmap r scrollPageUp\nmap e scrollPageDown\nmap w scrollToBottom\nmap q scrollToTop\nmap U scrollFullPageDown\nmap I scrollFullPageUp\nmap D scrollDown\nmap F scrollUp\nmap S scrollLeft\nmap G scrollRight\n\n#change mode\nmap , enterInsertMode\nmap . enterVisualMode\nmap ; enterVisualLineMode\n\n#opening links\nmap Y LinkHints.activateModeToOpenInNewTab\nmap y LinkHints.activateMode\nmap & LinkHints.activateModeToOpenInNewForegroundTab\nmap T LinkHints.activateModeToOpenInNewTab\nmap t LinkHints.activateMode\nmap <c-y> LinkHints.activateModeToOpenIncognito\nmap <c-7> LinkHints.activateModeWithQueue\n#map <a-y> LinkHints.activateModeWithQueue #doesn't work with Talon\n\n#marking\nmap 1 Marks.activateCreateMode\n\n#find mode commands\nmap p performFind\nmap P performBackwardsFind\n\n#navigating history\nmap h goBack\nmap l goForward\nmap s goBack\nmap g goForward\n\n#manipulating tabs\nmap n removeTab\nmap N restoreTab\nmap m createTab\nmap v removeTab\nmap V restoreTab\nmap b createTab\nmap 8 duplicateTab\nmap 7 closeTabsOnLeft\nmap 9 closeTabsOnRight\nmap 0 closeOtherTabs\nmap d previousTab\nmap f nextTab\nmap j previousTab\nmap k nextTab\nmap - firstTab\nmap = lastTab\nmap ^ visitPreviousTab\nmap \\ Vomnibar.activateTabSelection\n\n#unmap keys\nunmap p,a-nmap gg\nunmap <a-f>",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "www.google.com",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
