@@ -11,7 +11,7 @@ keymap = {
     "(select | sell | cell) search bar": Key("ctrl-f"),
     "new window": Key("ctrl-n"),
     "close window": Key("ctrl-w"),
-    "(open | see | view) properties": Key("alt-enter"),
+    "(show | open | see | view) properties": Key("alt-enter"),
     "history back": Key("alt-left"),
     "history forward": Key("alt-right"),
     "(open | see | view) parent": Key("alt-up"),
