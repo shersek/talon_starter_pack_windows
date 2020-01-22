@@ -1,10 +1,28 @@
-from talon.voice import Context, Key
-from ..utils import text, key_pressify_string, time_delay
 import os
+
+from talon import ctrl, tap, ui
+from talon.voice import Context, Key
+
+from ..utils import key_pressify_string, text, time_delay
 
 ctx = Context(
     "windows_explorer", func=lambda app, win: app.name.lower() == "windows explorer"
 )
+
+
+def right_click_southeast(m):
+    win = ui.active_window()
+    rect = win.rect
+    center_x = rect.x + rect.width / 2
+    center_y = rect.y + rect.height / 2
+    multiplier = 1.7
+    pos = (
+        center_x + multiplier * rect.width / 4,
+        center_y + multiplier * rect.height / 4,
+    )
+    ctrl.mouse_move(*pos)
+    ctrl.mouse_click(button=1, times=1, wait=16000)
+
 
 keymap = {
     "(select | sell | cell) adress bar": Key("alt-d"),
@@ -25,7 +43,7 @@ keymap = {
     "open with adam": [Key("shift-f10"), time_delay(0.2)]
     + [Key("down")] * 3
     + [time_delay(0.5), Key("enter")],
-    "copy address": [
+    "copy address [bar]": [
         Key("alt-d"),
         time_delay(0.3),
         Key("ctrl-a"),
@@ -35,6 +53,8 @@ keymap = {
         Key("esc"),
         Key("esc"),
     ],
+    "open (get | git) (bash | here)": [right_click_southeast]
+    + [Key("g"), time_delay(0.1), Key("down"), time_delay(0.1), Key("enter")],
 }
 
 ctx.keymap(keymap)

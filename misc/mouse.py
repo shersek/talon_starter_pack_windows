@@ -1,4 +1,5 @@
 import time
+
 from talon import ctrl, tap, ui
 from talon.voice import Context, Key
 
@@ -49,7 +50,7 @@ def tripclick(m):
 
 def press_key_and_click(m, key, button=0, times=1):
     ctrl.key_press(key, down=True)
-    ctrl.mouse_click(pos=(x, y) ,  button=button, times=times, wait=16000)
+    ctrl.mouse_click(pos=(x, y), button=button, times=times, wait=16000)
     ctrl.key_press(key, up=True)
 
 
@@ -71,6 +72,7 @@ def mouse_smooth_scroll(amount):
                 time.sleep(interval)
         else:
             ctrl.mouse_scroll(y=amount)
+
     return scroll
 
 
@@ -93,62 +95,79 @@ def mouse_center(m):
 
 
 def mouse_place(multiplier_string):
-    if multiplier_string=="half":
-        multiplier=1
-    elif multiplier_string=="full":
-        multiplier=1.8
+    if multiplier_string == "half":
+        multiplier = 1
+    elif multiplier_string == "full":
+        multiplier = 1.8
+
     def internal(m):
         win = ui.active_window()
         rect = win.rect
-        center_x = rect.x + rect.width/2
-        center_y = rect.y +rect.height/2
-        region=regions[m._words[1]]
-        if region=="west":
-            pos = (center_x - multiplier*rect.width / 4, center_y )
-        elif region=="east":
-            pos = (center_x + multiplier*rect.width / 4, center_y)
-        elif region=="north":
-            pos = (center_x , center_y -multiplier*rect.height/ 4)
-        elif region=="south":
-            pos = (center_x , center_y + multiplier*rect.height/ 4)
-        elif region=="northeast":
-            pos = (center_x + multiplier*rect.width / 4, center_y - multiplier*rect.height/ 4)
-        elif region=="northwest":
-            pos = (center_x - multiplier*rect.width / 4, center_y - multiplier*rect.height/ 4)
-        elif region=="southeast":
-            pos = (center_x + multiplier*rect.width / 4, center_y + multiplier*rect.height/ 4)
-        elif region=="southwest":
-            pos = (center_x - multiplier*rect.width / 4, center_y + multiplier*rect.height/ 4)
+        center_x = rect.x + rect.width / 2
+        center_y = rect.y + rect.height / 2
+        region = regions[m._words[1]]
+        if region == "west":
+            pos = (center_x - multiplier * rect.width / 4, center_y)
+        elif region == "east":
+            pos = (center_x + multiplier * rect.width / 4, center_y)
+        elif region == "north":
+            pos = (center_x, center_y - multiplier * rect.height / 4)
+        elif region == "south":
+            pos = (center_x, center_y + multiplier * rect.height / 4)
+        elif region == "northeast":
+            pos = (
+                center_x + multiplier * rect.width / 4,
+                center_y - multiplier * rect.height / 4,
+            )
+        elif region == "northwest":
+            pos = (
+                center_x - multiplier * rect.width / 4,
+                center_y - multiplier * rect.height / 4,
+            )
+        elif region == "southeast":
+            pos = (
+                center_x + multiplier * rect.width / 4,
+                center_y + multiplier * rect.height / 4,
+            )
+        elif region == "southwest":
+            pos = (
+                center_x - multiplier * rect.width / 4,
+                center_y + multiplier * rect.height / 4,
+            )
         ctrl.mouse_move(*pos)
+
     return internal
 
+
 def mouse_move_pixels(no_pixels_string):
-    if no_pixels_string=="one" or no_pixels_string=="1":
-        no_pixels_int=1
-    elif no_pixels_string=="ten":
-        no_pixels_int=10
-    if no_pixels_string=="hundred":
-        no_pixels_int=100
+    if no_pixels_string == "one" or no_pixels_string == "1":
+        no_pixels_int = 1
+    elif no_pixels_string == "ten":
+        no_pixels_int = 10
+    if no_pixels_string == "hundred":
+        no_pixels_int = 100
+
     def internal(m):
         cur_x, cur_y = ctrl.mouse_pos()
-        region=regions[m._words[1]]
-        if region=="west":
-            pos = (cur_x - no_pixels_int, cur_y )
-        elif region=="east":
+        region = regions[m._words[1]]
+        if region == "west":
+            pos = (cur_x - no_pixels_int, cur_y)
+        elif region == "east":
             pos = (cur_x + no_pixels_int, cur_y)
-        elif region=="north":
-            pos = (cur_x , cur_y - no_pixels_int)
-        elif region=="south":
-            pos = (cur_x , cur_y + no_pixels_int)
-        elif region=="northeast":
+        elif region == "north":
+            pos = (cur_x, cur_y - no_pixels_int)
+        elif region == "south":
+            pos = (cur_x, cur_y + no_pixels_int)
+        elif region == "northeast":
             pos = (cur_x + no_pixels_int, cur_y - no_pixels_int)
-        elif region=="northwest":
+        elif region == "northwest":
             pos = (cur_x - no_pixels_int, cur_y - no_pixels_int)
-        elif region=="southeast":
+        elif region == "southeast":
             pos = (cur_x + no_pixels_int, cur_y + no_pixels_int)
-        elif region=="southwest":
+        elif region == "southwest":
             pos = (cur_x - no_pixels_int, cur_y + no_pixels_int)
         ctrl.mouse_move(*pos)
+
     return internal
 
 
@@ -171,22 +190,20 @@ def control_shift_click(m, button=0, times=1):
 
 
 regions = {
-            "north":"north",
-            "south":"south",
-            "east":"east",
-            "west":"west",
-
-            "northeast":"northeast",
-            "northwest":"northwest",
-            "southeast":"southeast",
-            "southwest":"southwest",
-
-           }
+    "north": "north",
+    "south": "south",
+    "east": "east",
+    "west": "west",
+    "northeast": "northeast",
+    "northwest": "northwest",
+    "southeast": "southeast",
+    "southwest": "southwest",
+}
 
 keymap = {
     # jsc modified with some voice-code compatibility
     "righty (click | chirff)": right_click,
-    "righty press" : Key("shift-f10"),
+    "righty press": Key("shift-f10"),
     "(click | chiff)": click,
     "(dubclick | duke)": dubclick,
     "(tripclick | triplick)": tripclick,
