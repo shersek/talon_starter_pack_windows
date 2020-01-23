@@ -75,7 +75,7 @@ keymap.update(
         "cd talon plugins": "cd {}\n".format(TALON_PLUGINS),
         "talon logs": "cd {} && tail -f talon.log\n".format(TALON_HOME),
         "grep": "grep ",
-        "elle less": "ls ",
+        "(elle less | ellis | ls | LS)": "ls ",
         "run L S": "ls\n",
         "run (S S H | S H)": "ssh",
         "(ssh | sh)": "ssh ",

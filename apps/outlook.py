@@ -24,6 +24,9 @@ keymap = {
         time.sleep(0.5),
         ctrl.key_press("alt", alt=True, up=True),
     ),
+    "search bar": Key("ctrl-e"),
+    "go inbox": Key("ctrl-shift-i"),
+    "compose [message]": Key("ctrl-shift-m"),
     # "dismiss outlook": [lambda m: switch_app(name="outlook"), Key("cmd-w")],
 }
 
