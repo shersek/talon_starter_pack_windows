@@ -19,7 +19,7 @@ context.keymap(
         "[run] get clone": "git clone ",
         "get commit": "git commit ",
         "run get commit": "git commit\n",
-        "git commit message": 'git commit -m "',
+        "git commit message": ['git commit -m ""', Key("left")],
         "get diff": "git diff ",
         "run get diff": "git diff\n",
         "run get diff master": "git diff master\n",
