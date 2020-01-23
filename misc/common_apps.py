@@ -26,6 +26,9 @@ keymap = {
     "launch (atom | adam)": lambda m: ui.launch(
         path="C:\\Users\\herse\\AppData\\Local\\atom\\app-1.42.0\\atom.exe"
     ),
+    "launch kindle": lambda m: ui.launch(
+        path="C:\\Users\\herse\\AppData\\Local\\Amazon\\Kindle\\application\\Kindle.exe"
+    ),
     "launch paint": lambda m: ui.launch(path="C:\\WINDOWS\\system32\\mspaint.exe"),
     # "launch dropbox": lambda m: ui.launch(path="C:\\Program Files (x86)\\Dropbox\\Client\\Dropbox.exe"), #doesn't work...
     "launch (win | windows) explorer": lambda m: ui.launch(

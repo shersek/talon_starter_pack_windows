@@ -10,7 +10,7 @@ ctx = Context(
 )
 
 
-def right_click_southeast(m):
+def left_right_click_southeast(m):
     win = ui.active_window()
     rect = win.rect
     center_x = rect.x + rect.width / 2
@@ -21,6 +21,7 @@ def right_click_southeast(m):
         center_y + multiplier * rect.height / 4,
     )
     ctrl.mouse_move(*pos)
+    ctrl.mouse_click(button=0, times=1, wait=16000)
     ctrl.mouse_click(button=1, times=1, wait=16000)
 
 
@@ -53,7 +54,7 @@ keymap = {
         Key("esc"),
         Key("esc"),
     ],
-    "open (get | git) (bash | here)": [right_click_southeast]
+    "open (get | git) (bash | here)": [left_right_click_southeast]
     + [Key("g"), time_delay(0.1), Key("down"), time_delay(0.1), Key("enter")],
 }
 
