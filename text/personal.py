@@ -1,6 +1,8 @@
-from talon.voice import Context, Key
-from ..utils import key_pressify_string
 import os
+
+from talon.voice import Context, Key
+
+from ..utils import key_pressify_string
 
 context = Context("personal")
 cwd = os.path.dirname(os.path.realpath(__file__))

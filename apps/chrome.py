@@ -110,6 +110,20 @@ keymap = {
         Key("tab"),
         Key("tab"),
     ],
+    "(launch | go to) gmail": [
+        Key("shift-o"),
+        time_delay(0.5),
+        "https://mail.google.com/mail/u/0/#inbox",
+        time_delay(0.5),
+        Key("enter"),
+    ],
+    "(launch | go to) [google] drive": [
+        Key("shift-o"),
+        time_delay(0.5),
+        "https://drive.google.com/drive/my-drive",
+        time_delay(0.5),
+        Key("enter"),
+    ],
     # Page cruising not possible currently in windows beta
     # "start (cruz | crews | cruise) [down]": lambda m: ctrl.key_press("down", down=True),
     # "stop (cruz | crews | cruise) [down]": lambda m: ctrl.key_press("down", up=True),
