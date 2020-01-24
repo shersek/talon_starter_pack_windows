@@ -58,6 +58,20 @@ def snipline():
     press("delete")
 
 
+def copyline():
+    press("end")
+    press("shift-home")
+    press("ctrl-c")
+    press("end")
+
+
+def cutline():
+    press("end")
+    press("shift-home")
+    press("ctrl-x")
+    press("end")
+
+
 # def get_first_word(m):
 #     return m.dgndictation.words[0]
 #
@@ -132,13 +146,13 @@ keymap = {
         Key("ctrl-c"),
         Key("ctrl-shift-left"),
     ],
-    "copy line": [Key("end"), Key("shift-home"), Key("ctrl-c"), Key("end")],
+    "copyline" + optional_numerals(): jump_to_bol_and(copyline),
     "copy (home | pop)": [Key("shift-home"), Key("ctrl-c"), Key("right")],
     "copy (end | push)": [Key("shift-end"), Key("ctrl-c"), Key("left")],
     # cutting
     "cut (word left | stone)": [Key("ctrl-shift-left"), Key("ctrl-x")],
     "cut (word right | step)": [Key("ctrl-shift-right"), Key("ctrl-x")],
-    "cut line": [Key("end"), Key("shift-home"), Key("ctrl-x")],
+    "cutline" + optional_numerals(): jump_to_bol_and(cutline),
     "cut (home | pop)": [Key("shift-home"), Key("ctrl-x")],
     "cut (end | push)": [Key("shift-end"), Key("ctrl-x")],
     # misc
