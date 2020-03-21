@@ -254,6 +254,8 @@ keymap = {
     "script close": command("script close view"),
     "(code | script) kill": Key("ctrl-q"),
     "(rep | rap | wrap) (toggle | switch)": command("toggle soft wrap"),
+    # bookmark
+    "(bookmark | mark) toggle": command("bookmark toggle"),
 }
 ctx.set_list("snippets", snippets.keys())
 ctx.keymap(keymap)
